@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'http://168.231.95.166:3001/api';
 
 const Dashboard = () => {
   const [stats, setStats] = useState({

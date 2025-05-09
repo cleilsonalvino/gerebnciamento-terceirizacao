@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './PagamentoForm.css';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'http://168.231.95.166:3001/api';
 
 const PagamentoForm = () => {
   const navigate = useNavigate();

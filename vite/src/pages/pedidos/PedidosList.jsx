@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './PedidosList.css';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'http://168.231.95.166:3001/api';
 
 const PedidosList = () => {
   const [pedidos, setPedidos] = useState([]);

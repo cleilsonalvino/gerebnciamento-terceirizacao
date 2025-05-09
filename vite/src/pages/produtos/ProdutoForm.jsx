@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './ProdutoForm.css';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'http://168.231.95.166:3001/api';
 
 const ProdutoForm = () => {
   const { id } = useParams();

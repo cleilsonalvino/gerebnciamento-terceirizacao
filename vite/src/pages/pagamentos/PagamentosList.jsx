@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './PagamentosList.css';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'http://168.231.95.166:3001/api';
 
 const PagamentosList = () => {
   const [pagamentos, setPagamentos] = useState([]);
