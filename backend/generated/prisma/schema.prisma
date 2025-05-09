@@ -1,0 +1,149 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Modelo para costureiras
+model Costureira {
+  id           Int           @id @default(autoincrement())
+  nome         String
+  telefone     String?
+  email        String?
+  endereco     String?
+  cpf          String?       @unique
+  dataCadastro DateTime      @default(now())
+  ativo        Boolean       @default(true)
+  pedidos      Pedido[]
+  recebimentos Recebimento[]
+  devolucoes   Devolucao[]
+  pagamentos   Pagamento[]
+}
+
+// Modelo para produtos
+model Produto {
+  id            Int          @id @default(autoincrement())
+  nome          String
+  descricao     String?
+  valorUnitario Float
+  ativo         Boolean      @default(true)
+  itensPedido   ItemPedido[]
+}
+
+// Modelo para materiais
+model Material {
+  id            Int            @id @default(autoincrement())
+  nome          String
+  descricao     String?
+  unidadeMedida String // ex: metro, unidade, kg
+  ativo         Boolean        @default(true)
+  itensMaterial ItemMaterial[]
+}
+
+// Modelo para pedidos/envios
+model Pedido {
+  id            Int            @id @default(autoincrement())
+  costureira    Costureira     @relation(fields: [costureiraId], references: [id])
+  costureiraId  Int
+  dataEnvio     DateTime       @default(now())
+  dataPrevisao  DateTime?
+  observacao    String?
+  status        StatusPedido   @default(ENVIADO)
+  itensPedido   ItemPedido[]
+  itensMaterial ItemMaterial[]
+  recebimento   Recebimento?
+  devolucao     Devolucao?
+}
+
+// Status possíveis para um pedido
+enum StatusPedido {
+  ENVIADO
+  RECEBIDO
+  PRODUCAO
+  FINALIZADO
+  DEVOLVIDO
+}
+
+// Modelo para itens de produto em um pedido
+model ItemPedido {
+  id            Int     @id @default(autoincrement())
+  pedido        Pedido  @relation(fields: [pedidoId], references: [id])
+  pedidoId      Int
+  produto       Produto @relation(fields: [produtoId], references: [id])
+  produtoId     Int
+  quantidade    Int
+  valorUnitario Float
+}
+
+// Modelo para itens de material em um pedido
+model ItemMaterial {
+  id         Int      @id @default(autoincrement())
+  pedido     Pedido   @relation(fields: [pedidoId], references: [id])
+  pedidoId   Int
+  material   Material @relation(fields: [materialId], references: [id])
+  materialId Int
+  quantidade Float
+  devolvido  Float    @default(0)
+}
+
+// Modelo para recebimentos
+model Recebimento {
+  id              Int        @id @default(autoincrement())
+  pedido          Pedido     @relation(fields: [pedidoId], references: [id])
+  pedidoId        Int        @unique
+  costureira      Costureira @relation(fields: [costureiraId], references: [id])
+  costureiraId    Int
+  dataRecebimento DateTime   @default(now())
+  observacao      String?
+}
+
+// Modelo para devoluções
+model Devolucao {
+  id             Int             @id @default(autoincrement())
+  pedido         Pedido          @relation(fields: [pedidoId], references: [id])
+  pedidoId       Int             @unique
+  costureira     Costureira      @relation(fields: [costureiraId], references: [id])
+  costureiraId   Int
+  dataDevolucao  DateTime        @default(now())
+  observacao     String?
+  itensDevolucao ItemDevolucao[]
+}
+
+// Modelo para itens devolvidos
+model ItemDevolucao {
+  id          Int       @id @default(autoincrement())
+  devolucao   Devolucao @relation(fields: [devolucaoId], references: [id])
+  devolucaoId Int
+  materialId  Int
+  quantidade  Float
+}
+
+// Modelo para pagamentos
+model Pagamento {
+  id             Int             @id @default(autoincrement())
+  costureira     Costureira      @relation(fields: [costureiraId], references: [id])
+  costureiraId   Int
+  dataPagamento  DateTime        @default(now())
+  valorTotal     Float
+  observacao     String?
+  itensPagamento ItemPagamento[]
+}
+
+// Modelo para itens de pagamento
+model ItemPagamento {
+  id            Int       @id @default(autoincrement())
+  pagamento     Pagamento @relation(fields: [pagamentoId], references: [id])
+  pagamentoId   Int
+  pedidoId      Int
+  produtoId     Int
+  quantidade    Int
+  valorUnitario Float
+  valorTotal    Float
+}

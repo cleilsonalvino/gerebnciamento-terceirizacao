@@ -1,0 +1,102 @@
+.pagamento-form .form-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.pagamento-form .form-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.pagamento-form .pedidos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pagamento-form .pedido-item {
+  padding: 15px;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.pagamento-form .form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pagamento-form .form-check-input {
+  margin-right: 10px;
+}
+
+.pagamento-form .pedido-details {
+  margin-top: 10px;
+  margin-left: 25px;
+  padding-top: 10px;
+  border-top: 1px dashed #e9ecef;
+}
+
+.pagamento-form .pedido-produtos h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.pagamento-form .pedido-produtos ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.pagamento-form .pedido-total {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.pagamento-form .pagamento-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.pagamento-form .pagamento-total h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.pagamento-form .valor-total {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
+.pagamento-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .pagamento-form .pagamento-total {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .pagamento-form .valor-total {
+    margin-top: 10px;
+  }
+}

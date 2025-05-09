@@ -1,0 +1,75 @@
+.pedido-form .form-section {
+  margin-bottom: 20px;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 15px;
+  background-color: #f8f9fa;
+}
+
+.pedido-form .form-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.pedido-form .form-section-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.pedido-form .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-left: -10px;
+  margin-bottom: 10px;
+}
+
+.pedido-form .col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 10px;
+}
+
+.pedido-form .col-md-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  padding: 0 10px;
+}
+
+.pedido-form .col-md-2 {
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+  padding: 0 10px;
+}
+
+.pedido-form .d-flex {
+  display: flex;
+}
+
+.pedido-form .align-items-end {
+  align-items: flex-end;
+}
+
+.pedido-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .pedido-form .col-md-6,
+  .pedido-form .col-md-4,
+  .pedido-form .col-md-2 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .pedido-form .d-flex.align-items-end {
+    justify-content: flex-end;
+  }
+}

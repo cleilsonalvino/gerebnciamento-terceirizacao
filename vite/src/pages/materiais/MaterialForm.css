@@ -1,0 +1,20 @@
+.material-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.material-form .form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.material-form .form-check-input {
+  margin-right: 8px;
+}
+
+.material-form .form-check-label {
+  margin-bottom: 0;
+}

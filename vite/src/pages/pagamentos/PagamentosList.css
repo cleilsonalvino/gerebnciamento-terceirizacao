@@ -1,0 +1,31 @@
+.pagamentos-list .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pagamentos-list .valor {
+  font-weight: 500;
+}
+
+.pagamentos-list .btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagamentos-list .btn-action.view {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.pagamentos-list .btn-action.view:hover {
+  background-color: #b8daff;
+}

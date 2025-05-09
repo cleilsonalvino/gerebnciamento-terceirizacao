@@ -1,0 +1,47 @@
+.recebimento-form .pedido-info {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.recebimento-form .pedido-info h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.recebimento-form .info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.recebimento-form .info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.recebimento-form .info-label {
+  font-weight: 500;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+.recebimento-form .info-value {
+  font-weight: 400;
+}
+
+.recebimento-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .recebimento-form .info-grid {
+    grid-template-columns: 1fr;
+  }
+}

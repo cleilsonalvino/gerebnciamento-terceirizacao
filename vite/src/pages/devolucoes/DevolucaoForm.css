@@ -1,0 +1,121 @@
+.devolucao-form .pedido-info {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.devolucao-form .pedido-info h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.devolucao-form .info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.devolucao-form .info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.devolucao-form .info-label {
+  font-weight: 500;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+.devolucao-form .info-value {
+  font-weight: 400;
+}
+
+.devolucao-form .form-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.devolucao-form .form-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.devolucao-form .materiais-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.devolucao-form .material-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.devolucao-form .material-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.devolucao-form .material-name {
+  font-weight: 500;
+}
+
+.devolucao-form .material-unit {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.devolucao-form .material-quantity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 150px;
+}
+
+.devolucao-form .material-quantity label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.devolucao-form .quantity-max {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-top: 5px;
+}
+
+.devolucao-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .devolucao-form .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .devolucao-form .material-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .devolucao-form .material-quantity {
+    width: 100%;
+    margin-top: 10px;
+    align-items: flex-start;
+  }
+}
